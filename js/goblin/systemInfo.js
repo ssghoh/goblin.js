@@ -1,56 +1,66 @@
 /**
  * systemInfo.js
- * 게임 실행 환경을 검사 함
+ * Check running system environment information
  * @author Hyunseok
  */
 var systemInfo = {
-	platform: null,		// web, mobile
-	device: null,		// ipad, iphone, android, pc
-	browser: null,		// chrome, ie, safari, firefox or opera
+	platform: null,		// service platform type
+	browser: null,		// browser engine type
 	screenWidth: null,
 	screenHeight: null,
 	resolution: null,
 	orientation: null,
 /**
- * 실행 기기의 화면 크기 정보 확인
+ * Check screen size
  */
 	checkDeviceScreen: function() {
 		this.screenWidth = window.innerWidth;
 		this.screenHeight = window.innerHeight;
-		console.log(this.screenWidth +" X " + this.screenHeight);
 	},
 /**
- * 해상도 확인
+ * Check screen resolution
  */
 	checkResolution: function() {
-		this.resolution = this.screenWidth/this.screenHeight;
-		console.log(">> " + this.resolution); 
+		this.resolution = this.screenWidth/this.screenHeight; 
 	},
 /**
- * 오리엔테이션 확인
+ * Check screen orientation
  */
 	checkOrientation:function() {
 		if(this.resolution < 1)
-			this.orientation = "portrait";
+			this.orientation = 'portrait';
 		else
-			this.orientation = "landscape";
-		console.log(">> " + this.orientation);
+			this.orientation = 'landscape';
 	},
-
 /**
- * 시스템 정보 확인
+ * Check System Information
  */
 	checkSystem: function() {
-		console.log(navigator.appVersion);
-		console.log(navigator.userAgent);
-		this.platform = "";
-		this.device = "";
-		this.browser = "";
-		console.log(">> " + this.platform);
-		console.log(">> " + this.device);
-		console.log(">> " + this.browser);
+		// check platform
+		if(navigator.userAgent.match(/Android/i) != null) this.platform = 'android';
+		else if(navigator.userAgent.match(/iphone/i) != null) this.platform = 'iphone';
+		else if(navigator.userAgent.match(/ipod/i) != null) this.platform = 'ipod';
+		else if(navigator.userAgent.match(/ipad/i) != null) this.platform = 'ipad';
+		else this.platform = 'pc';
+		
+		// check browser
+		if(navigator.userAgent.match(/trident/i) != null) this.browser = 'trident';
+		else if(navigator.userAgent.match(/webkit/i) != null) this.browser = 'webkit';
+		else if(navigator.userAgent.match(/gecko/i) != null) this.browser = 'gecko';
+		else if(navigator.userAgent.match(/presto/i) != null) this.browser = 'presto';
+
 		this.checkDeviceScreen();
 		this.checkResolution();
 		this.checkOrientation();
+		
+		// log
+		console.log('********************************************');
+		console.log('** System Information');
+		console.log('********************************************');
+		console.log('** Service platform : ' + this.platform);
+		console.log('** Browser engine : ' + this.browser);
+		console.log('** Screen size : (' + this.screenWidth + ', ' + this.screenHeight +')');
+		console.log('** Screen resolution : ' + this.orientation);
+		console.log('********************************************');
 	}
 };

@@ -7,7 +7,7 @@ var Goblin = {
 	assetManager : null,
 	sceneManager : null,
 	start : function()	{
-		console.log(">> Start Goblin.js");
+		console.log("** Start Goblin.js v0.1.0");
 		systemInfo.checkSystem();
 	}
 };
