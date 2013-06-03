@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset='utf-8' />
 
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome FrameRemove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 
 		<title>Goblin.js Sample</title>
-		<meta name="description" content="Goblin.js Engine" />
-		<meta name="author" content="Hyunseok Oh" />
+		<meta name='description' content='Goblin.js Engine' />
+		<meta name='author' content='Hyunseok Oh' />
+		
+		<!-- Load CSS -->
+		<link rel='stylesheet' src='css/game.css'>
 		
 		<!-- Load Common JavaScript Library -->
 		<script src='js/com/modernizr.2.6.2.js'></script>
 		<script src='js/com/jquery-2.0.2.js'></script>
 		
 		<!-- Load Goblin Game Engine Library -->
-		<script src='js/goblin/systemInfo.js'></script>
+		<script src='js/goblin/SystemInfo.js'></script>
+		<script src='js/goblin/DomUtil.js'></script>
+		<script src='js/goblin/Asset.js'></script>
+		<script src='js/goblin/Scene.js'></script>
+		<script src='js/goblin/AssetManager.js'></script>
+		<script src='js/goblin/NetManager.js'></script>
+		<script src='js/goblin/SceneManager.js'></script>
 				
 		<!-- Load Game Source -->
 		
 		<!-- Start Application -->
-		<script src='js/goblin.js'></script>
+		<script src='js/Goblin.js'></script>
 		<script>
 			$(document).ready(function() {
 				Goblin.start();
 			});
 		</script>
-		
 	</head>
-
-	<body>
+	<body style='margin:0px; background-color:white;'>
 	</body>
 </html>

@@ -1,15 +1,18 @@
 /**
- * systemInfo.js
+ * SystemInfo.js
  * Check running system environment information
- * @author Hyunseok
+ * @author Hyunseok Oh
  */
-var systemInfo = {
+var SystemInfo = {
 	platform: null,		// service platform type
 	browser: null,		// browser engine type
 	screenWidth: null,
 	screenHeight: null,
 	resolution: null,
 	orientation: null,
+	canvas: null,
+	touch: null,
+	webgl: null,
 /**
  * Check screen size
  */
@@ -33,6 +36,14 @@ var systemInfo = {
 			this.orientation = 'landscape';
 	},
 /**
+ * Check HTML5 technology
+ */
+	checkHTML5:function() {
+		this.canvas = Modernizr.canvas;
+		this.touch = Modernizr.touch;
+		this.webgl = Modernizr.webgl;
+	},
+/**
  * Check System Information
  */
 	checkSystem: function() {
@@ -49,9 +60,11 @@ var systemInfo = {
 		else if(navigator.userAgent.match(/gecko/i) != null) this.browser = 'gecko';
 		else if(navigator.userAgent.match(/presto/i) != null) this.browser = 'presto';
 
+		// check etc.
 		this.checkDeviceScreen();
 		this.checkResolution();
 		this.checkOrientation();
+		this.checkHTML5();
 		
 		// log
 		console.log('********************************************');
@@ -61,6 +74,12 @@ var systemInfo = {
 		console.log('** Browser engine : ' + this.browser);
 		console.log('** Screen size : (' + this.screenWidth + ', ' + this.screenHeight +')');
 		console.log('** Screen resolution : ' + this.orientation);
+		if(this.canvas) console.log('** This browser support HTML5 Canvas');
+		else console.log('** This browser cannot support HTML5 Canvas');
+		if(this.touch) console.log('** This browser support HTML5 Touch Event');
+		else console.log('** This browser cannot support HTML5 Touch Event');
+		if(this.webgl) console.log('** This browser support HTML5 webgl');
+		else console.log('** This browser cannot support HTML5 webgl');
 		console.log('********************************************');
 	}
 };
