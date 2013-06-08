@@ -20,24 +20,4 @@ function Scene(id,type) {
 	this.uiView = null;
 	this.bgView = null;
 	this.objView = null; 
-			
-	switch(type) {
-		case SceneType.IMAGE:
-			this.bgView = null;
-			break;
-		case SceneType.ANIMATION: 
-			this.bgView = null;
-			this.objView = null; 
-			break;
-		case SceneType.APP: 
-			this.bgView = null;
-			this.uiView = null;
-			break;
-		case SceneType.GAME: 
-			this.uiView = null;
-			this.bgView = null;
-			this.objView = null; 
-			break;
-	};
 };
-
