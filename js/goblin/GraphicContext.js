@@ -1,10 +1,11 @@
 /**
  * GraphicContext.js
- * Date 2012. 12. 18
+ * Date 2013. 06. 10
  * Description - Canvas Context Interface
- * Version 1.0
+ * @author Hyunseok Oh
  * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
+
 var GraphicContext = {
 	context: null,
 	getContext: function(view) {

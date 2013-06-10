@@ -1,7 +1,9 @@
 /**
  * SceneManager.js
- * Manage Game Scenes
+ * Date 2013. 06. 10
+ * Description - Manage Game Scenes
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
 
 var SCENE = {IMG: 0, ANI: 1,APP: 2,	GAME: 3};	// Assign SCENE Constant Assign

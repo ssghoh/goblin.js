@@ -1,7 +1,9 @@
 /**
  * Core.js
- * Game Core Generation - Generate Finate State Machine
+ * Date 2013. 06. 10
+ * Description - ame Core Generation - Generate Finate State Machine
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
 
 window.requestAnimFrame = (

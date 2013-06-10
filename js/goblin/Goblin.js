@@ -1,6 +1,9 @@
 /**
- * Goblin.js - A shrewd HTML5 framework for game development
+ * Goblin.js
+ * Date 2013. 06. 10
+ * Description - A shrewd HTML5 framework for game development
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
 
 var Goblin = {

@@ -1,8 +1,11 @@
 /**
  * SystemInfo.js
- * Check running system environment information
+ * Date 2013. 06. 10
+ * Description - Check running system environment information
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
+
 var SystemInfo = {
 	platform: null,		// service platform type
 	browser: null,		// browser engine type

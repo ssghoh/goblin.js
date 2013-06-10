@@ -1,7 +1,9 @@
 /**
  * DomUtil.js
- * Class DOM Control Utility
+ * Date 2013. 06. 10
+ * Description - Class DOM Control Utility
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
 
 var DomUtil = {
