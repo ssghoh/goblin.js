@@ -1,8 +1,11 @@
 /**
  * StateLoad.js
- * Implement Game Load
+ * Date 2013. 06. 10
+ * Description - Implement Game Load
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
+
 function StateLoad(sceneType)
 {
 	_state = this;

@@ -1,7 +1,9 @@
 /**
  * StateManager.js
- * Manage Game State
+ * Date 2013. 06. 10
+ * Description - Manage Game State
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
 
 /**
@@ -42,6 +44,7 @@ var StateManager = {
 			case STATE.LOAD: this.state = new StateLoad(SCENE.ANI); break;
 			case STATE.LOGIN: this.state = new StateLogin(SCENE.APP); break;
 			case STATE.PLAY: this.state = new StatePlay(SCENE.GAME); break;
+			/* To add new user defined state */
 		};
 	}
 };

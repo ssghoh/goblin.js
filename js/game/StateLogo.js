@@ -1,8 +1,11 @@
 /**
  * StateLogo.js
- * Implement Game Logo
+ * Date 2013. 06. 10
+ * Description - Implement Game Logo
  * @author Hyunseok Oh
+ * Copyright (c) SpringStream Game Lab., Inc. All Rights Reserved.
  */
+
 function StateLogo(sceneType)
 {
 	_state = this;
