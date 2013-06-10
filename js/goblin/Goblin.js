@@ -13,9 +13,9 @@ var Goblin = {
 	scene: SceneManager,
 	net: NetManager,
 	gc: GraphicContext,
-/**
- * Goblin.js Game Entry Point
- */
+	/**
+	 * Goblin.js Game Entry Point
+	 */
 	initialize: function()	{	
 		this.system.checkSystem();
 		if(!this.system.canvas)	{

@@ -12,6 +12,7 @@ function StateLoad(sceneType)
 	this.scene = Goblin.scene.createScene(sceneType);
 	this.ctx = Goblin.gc;
 	this.stm = StateManager;
+	
 	this.initialize();
 	this.run();
 };

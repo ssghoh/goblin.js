@@ -14,6 +14,7 @@ var SceneManager = {
 	height: 0,
 	/**
  	 * Initialize SceneManager
+ 	 * @param {number, number} width - Assing scene width, height - Assign scene height
  	 */	
 	initialize: function(width,height)	{
 		console.log('** Initialize Goblin.SceneManager');

@@ -7,6 +7,9 @@
  */
 
 var AssetManager = {
+	/**
+ 	 * Initialize AssetManager
+ 	 */	
 	initialize: function()	{
 		console.log('** Initialize Goblin.AssetManager');
 	}

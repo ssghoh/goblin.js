@@ -31,6 +31,9 @@ window.cancelRequestAnimFrame = (
 )();
 
 var Core = {
+	/**
+	 * Run State 
+	 */
 	run: function()	{
 		_state.requestLoop = window.requestAnimFrame(_state.run, document.getElementsByTagName('body'));
 		
@@ -41,6 +44,9 @@ var Core = {
 		
 		if(SceneManager.stats != null)	SceneManager.stats.end();	
 	},
+	/**
+	 * Pause State 
+	 */
 	pause: function() {
 		window.cancelRequestAnimFrame(_state.requestLoop);
 	} 

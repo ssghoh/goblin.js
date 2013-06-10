@@ -7,11 +7,18 @@
  */
 
 var DomUtil = {
+	/**
+	 * create Div element
+	 */
 	createDiv: function(id) {
 		var div = document.createElement('div');
 		div.id = id;
 		return div;
 	},
+	/**
+	 * create Canvas element
+	 */
+	
 	createCanvas: function(id,width,height) {
 		var canvas = document.createElement('canvas');
 		canvas.id = id;
