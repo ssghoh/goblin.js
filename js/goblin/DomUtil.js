@@ -3,12 +3,14 @@
  */
 
 var DomUtil = {
-	createDiv: function() {
+	createDiv: function(id) {
 		var div = document.createElement('div');
+		div.id = id;
 		return div;
 	},
-	createCanvas: function(width,height) {
+	createCanvas: function(id,width,height) {
 		var canvas = document.createElement('canvas');
+		canvas.id = id;
 		canvas.width = width;
 		canvas.height = height;
 		return canvas;

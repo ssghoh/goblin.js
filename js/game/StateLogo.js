@@ -6,26 +6,31 @@
 function StateLogo()
 {
 	_state = this;
-	this.scene = scene;
-	
-	this.init();
+		
+	this.initialize();
 	this.run();
 };
 
 StateLogo.prototype.run = Game.run;
 StateLogo.prototype.pause = Game.pause;
 
-StateLogo.prototype.init = function()
+StateLogo.prototype.initialize = function()
 {
-	console.log(">> init Logo");
+	console.log(">> initialize Logo");
+	SceneManager.createScene(SCENE.IMG);
+	this.bg = new Image();
+	this.bg.src = './image/bg0.jpg';
+	this.ctx = SceneManager.getContext(VIEW.BG);
 };
 
 StateLogo.prototype.update = function()
 {
-	console.log(">> update Logo");
+	// console.log(">> update Logo");
+	// StateManager.runState(STATE.LOAD);
 };
 
 StateLogo.prototype.render = function()
 {
-	console.log(">> render Logo");
+	//console.log(">> render Logo");
+	this.ctx.drawImage(this.bg,0,0);
 };

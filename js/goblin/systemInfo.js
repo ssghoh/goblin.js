@@ -13,39 +13,44 @@ var SystemInfo = {
 	canvas: null,
 	touch: null,
 	webgl: null,
-/**
- * Check screen size
- */
+	/**
+	 * Check screen size
+	 */
 	checkDeviceScreen: function() {
-		this.screenWidth = window.innerWidth;
-		this.screenHeight = window.innerHeight;
+		if(this.platform == 'pc')	{
+			this.screenWidth = 1024;
+			this.screenHeight = 768;
+		} else {
+			this.screenWidth = window.innerWidth;
+			this.screenHeight = window.innerHeight;	
+		}
 	},
-/**
- * Check screen resolution
- */
+	/**
+	 * Check screen resolution
+	 */
 	checkResolution: function() {
 		this.resolution = this.screenWidth/this.screenHeight; 
 	},
-/**
- * Check screen orientation
- */
+	/**
+	 * Check screen orientation
+	 */
 	checkOrientation:function() {
 		if(this.resolution < 1)
 			this.orientation = 'portrait';
 		else
 			this.orientation = 'landscape';
 	},
-/**
- * Check HTML5 technology
- */
+	/**
+	 * Check HTML5 technology
+	 */
 	checkHTML5:function() {
 		this.canvas = Modernizr.canvas;
 		this.touch = Modernizr.touch;
 		this.webgl = Modernizr.webgl;
 	},
-/**
- * Check System Information
- */
+	/**
+	 * Check System Information
+	 */
 	checkSystem: function() {
 		// check platform
 		if(navigator.userAgent.match(/Android/i) != null) this.platform = 'android';

@@ -6,26 +6,25 @@
 function StatePlay()
 {
 	_state = this;
-	this.scene = scene;
 	
-	this.init();
+	this.initialize();
 	this.run();
 };
 
 StatePlay.prototype.run = Game.run;
 StatePlay.prototype.pause = Game.pause;
 
-StatePlay.prototype.init = function()
+StatePlay.prototype.initialize = function()
 {
-	
+	console.log(">> initialize Play");
 };
 
 StatePlay.prototype.update = function()
 {
-	
+	console.log(">> update Play");
 };
 
 StatePlay.prototype.render = function()
 {
-	
+	console.log(">> render Play");
 };
