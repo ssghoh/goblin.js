@@ -1,6 +1,6 @@
 /**
- * GameUtil.js
- * Class Game Util function
+ * Core.js
+ * Game Core Generation - Generate Finate State Machine
  * @author Hyunseok Oh
  */
 
@@ -28,12 +28,16 @@ window.cancelRequestAnimFrame = (
 	}
 )();
 
-var Game = {
+var Core = {
 	run: function()	{
 		_state.requestLoop = window.requestAnimFrame(_state.run, document.getElementsByTagName('body'));
 		
+		if(SceneManager.stats != null)	SceneManager.stats.begin();		
+		
 		_state.update();
-		_state.render();	
+		_state.render();
+		
+		if(SceneManager.stats != null)	SceneManager.stats.end();	
 	},
 	pause: function() {
 		window.cancelRequestAnimFrame(_state.requestLoop);

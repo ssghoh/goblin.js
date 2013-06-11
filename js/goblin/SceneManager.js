@@ -30,13 +30,16 @@ var SceneManager = {
 		
 		$('#game').css({'width':this.width+'px', 'height':this.height+'px', 'background-color':'black'});		
 		$('body').append(scene);
+		
+		// Set FPS View
+		this.setFPSView(true);
 	},
 	/**
  	 * Create Game Scene from SCENE type
  	 * @param {SCENE.Type} Type : (IMG or 0 - Image Viewer, ANI or 1 - Animation, APP or 2 - Application, GAME or 2 - Game)
- 	 * @return {Object} This return is canvas context
+ 	 * @return {Object} This return is Canvas Context Interface
  	 */	
-	createScene: function(scene) {
+	createScene: function(sceneType) {
 		// Initialize Scene
 		$('#background').remove();
 		$('#object').remove();
@@ -49,7 +52,7 @@ var SceneManager = {
 		var canvasSize = this.calcCanvasSize();
 		var canvasWidth = canvasSize[0];
 		var canvasHeight = canvasSize[1];
-		switch(scene) {
+		switch(sceneType) {
 			case SCENE.IMG:
 				bgView = DomUtil.createCanvas('background',canvasWidth,canvasHeight);
 				$('#game').append(bgView);
@@ -82,26 +85,6 @@ var SceneManager = {
 		$('#ui').css({'width':this.width+'px','height':this.height+'px'});
 	},
 	/**
- 	 * Get Canvas Context from VIEW type
- 	 * @param {VIEW.Type} Type : (BG or 0 - BackGround, OBJ or 1 - Object, UI or 2 - UserInterface)
- 	 * @return {Object} This return is canvas context
- 	 */	
-	getContext: function(view) {
-		var canvas = null;
-		var ctx = null;
-		switch(view) {
-			case VIEW.BG: canvas = document.getElementById('background'); break;
-			case VIEW.OBJ: canvas = document.getElementById('object'); break;
-			case VIEW.UI: canvas = document.getElementById('ui'); break;
-		};
-		
-		if(canvas != null)
-			ctx = canvas.getContext('2d');
-			
-		console.log(ctx);
-		return ctx;
-	},
-	/**
  	 * Calculate Canvas Size from System Information
  	 * @return {Array} This return is canvas size.
  	 */
@@ -119,5 +102,25 @@ var SceneManager = {
 		}
 		
 		return canvasSize;
+	},
+	/**
+ 	 * Attach Frame Rate View
+ 	 * @param {boolean} true - on fps View, false - off fpas View
+ 	 */
+	stats: null,
+	setFPSView: function(tf) {
+		$('#stats').remove();
+		if(tf == true)	{
+			this.stats = new Stats();
+			this.stats.setMode(0);
+			this.stats.domElement.style.position = 'absolute';
+			this.stats.domElement.style.left = (window.innerWidth-80)+'px';
+			this.stats.domElement.style.top = '0px';
+			this.stats.domElement.style.zIndex = '10000';
+			this.stats.domElement.style.display = 'block';
+			$('body').append(this.stats.domElement);
+		} else {
+			this.stats = null;
+		}
 	}
 };

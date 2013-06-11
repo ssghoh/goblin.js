@@ -27,27 +27,21 @@ var StateManager = {
 		console.log('** Initialize Goblin.StateManager');
 		this.curState = STATE.LOGO;
 		this.oldState = STATE.LOGO;
-		this.runState(STATE.LOGO);
+		this.transition(STATE.LOGO);
 	},
 	/**
  	 * Run State
  	 * @param {STATE.Type} Type : (LOGO or 0, LOAD or 1, LOGIN or 2, PLAY or 2)
  	 */
-	runState: function(state) {
+	transition: function(state) {
 		this.state = null;
+		this.oldState = this.curState;
+		this.curState = state;
 		switch(state) {
-			case STATE.LOGO:
-				this.state = new StateLogo();
-				break;
-			case STATE.LOAD:
-				this.state = new StateLoad();
-				break;
-			case STATE.LOGIN:
-				this.state = new StateLogin();
-				break;
-			case STATE.PLAY:
-				this.state = new StatePlay();
-				break;
+			case STATE.LOGO: this.state = new StateLogo(SCENE.IMG);	break;
+			case STATE.LOAD: this.state = new StateLoad(SCENE.ANI); break;
+			case STATE.LOGIN: this.state = new StateLogin(SCENE.APP); break;
+			case STATE.PLAY: this.state = new StatePlay(SCENE.GAME); break;
 		};
 	}
 };

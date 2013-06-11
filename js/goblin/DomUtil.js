@@ -1,5 +1,7 @@
 /**
- * @author Hyunseok
+ * DomUtil.js
+ * Class DOM Control Utility
+ * @author Hyunseok Oh
  */
 
 var DomUtil = {
@@ -14,5 +16,5 @@ var DomUtil = {
 		canvas.width = width;
 		canvas.height = height;
 		return canvas;
-	},
+	}
 };

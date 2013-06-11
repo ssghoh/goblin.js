@@ -16,28 +16,30 @@
 		<!-- Load Common JavaScript Library -->
 		<script src='js/com/modernizr.2.6.2.js'></script>
 		<script src='js/com/jquery-2.0.2.js'></script>
+		<script src="js/com/stats.js"></script>
 		
 		<!-- Load Goblin Game Engine Library -->
 		<script src='js/goblin/SystemInfo.js'></script>
 		<script src='js/goblin/DomUtil.js'></script>
-		<script src='js/goblin/Game.js'></script> 
+		<script src='js/goblin/Core.js'></script> 
 		<script src='js/goblin/Asset.js'></script>
 		<script src='js/goblin/AssetManager.js'></script>
 		<script src='js/goblin/NetManager.js'></script>
+		<script src='js/goblin/GraphicContext.js'></script>
 		<script src='js/goblin/SceneManager.js'></script>
-				
+		<script src='js/goblin/Goblin.js'></script>
+		
 		<!-- Load Game Source -->
 		<script src='js/game/StateLogo.js'></script>
 		<script src='js/game/StateLoad.js'></script>
 		<script src='js/game/StateLogin.js'></script>
 		<script src='js/game/StatePlay.js'></script>
 		<script src='js/game/StateManager.js'></script>
-				
+		
 		<!-- Start Application -->
-		<script src='js/Goblin.js'></script>
 		<script>
 			$(document).ready(function() {
-				Goblin.start();
+				GoblinStart();
 			});
 		</script>
 	</head>

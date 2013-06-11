@@ -3,16 +3,19 @@
  * Implement Game Play
  * @author Hyunseok Oh
  */
-function StatePlay()
+function StatePlay(sceneType)
 {
 	_state = this;
+	this.scene = Goblin.scene.createScene(sceneType);
+	this.ctx = Goblin.gc;
+	this.stm = StateManager;
 	
 	this.initialize();
 	this.run();
 };
 
-StatePlay.prototype.run = Game.run;
-StatePlay.prototype.pause = Game.pause;
+StatePlay.prototype.run = Goblin.core.run;
+StatePlay.prototype.pause = Goblin.core.pause;
 
 StatePlay.prototype.initialize = function()
 {
